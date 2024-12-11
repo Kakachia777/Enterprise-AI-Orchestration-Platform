@@ -1,0 +1,57 @@
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+  api_version: "v1"
+  owner: "Kakachia777"
+  
+models:
+  gpt4o:
+    model_name: "gpt-4o"
+    max_tokens: 2000
+    temperature: 0.7
+  
+  vision:
+    model_name: "yolov8x"
+    confidence_threshold: 0.5
+    
+  embeddings:
+    model_name: "all-MiniLM-L6-v2"
+    cache_dir: "models/embeddings"
+
+database:
+  mongodb:
+    uri: "mongodb://localhost:27017"
+    database: "ai_platform"
+  redis:
+    host: "localhost"
+    port: 6379
+    db: 0
+
+mlflow:
+  tracking_uri: "http://localhost:5000"
+  experiment_name: "enterprise_ai"
+
+monitoring:
+  prometheus:
+    port: 9090
+  grafana:
+    port: 3000
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/app.log"
+
+security:
+  jwt_secret: "your-secret-key"
+  token_expire_minutes: 60
+  ssl_enabled: true
+  owner: "Kakachia777"
+  
+storage:
+  data_dir: "data"
+  model_dir: "models"
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+  interim_data: "data/interim" 
